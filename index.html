@@ -11,122 +11,40 @@
 <body>
 
   <script>
-    // String
-    // 'Hello World!'
-    // Number
-    // 5.7
-    // Boolean
-    // false
+    let wins = 0
+    let losses = 0
+    let ties = 0
+    let choices = ['r', 'p', 's']
 
-    // let greeting = 'Hello World!'
+    for (let i = 0; i < 10; i++) {
 
-    // console.log(greeting, 'Goodbye World!', 5)
+      let computer = choices[Math.floor(Math.random() * choices.length)]
+      let user = prompt('Choose rock, paper, or scissors (r, p, or s)')
 
-    // let num = 7
-    // num = num + '3'
+      alert(`The computer chose ${computer}`)
 
-    // console.log(num)
-    // console.log(num === '73')
+      if ((user === 'r' && computer === 's') ||
+        (user === 'p' && computer === 'r') ||
+        (user === 's' && computer === 'p')) {
+        wins++
+        alert('You won!')
+      } else if ((user === 'r' && computer === 'p') ||
+        (user === 'p' && computer === 's') ||
+        (user === 's' && computer === 'r')) {
+          losses++
+          alert('You lost!')
+        } else {
+          ties++
+          alert('Tie game!')
+        }
+    }
 
-    // let x = 50
-    // x * 2
-
-    // let y = 10
-    // y = x
-
-    // console.log(x + y + 'hello')
-
-    // console.log('hello ' + 'world')
-
-    // let a = 'hello'
-    // let b = 'world'
-
-    // console.log(a + ' ' + b)
-    // console.log(`${a} ${b}`)
-
-    // let x = 5
-
-    // console.log(x)
-
-    // x = 7
-
-    // alert('Accept All Cookies')
-    // alert('Hello World!')
-
-    // let response = confirm('Are you sure?')
-
-    // console.log(response)
-
-    // let name = prompt('What is your name?')
-
-    // console.log(name)
-
-    // if (5 > 7) {
-    //   console.log('hi')
-    // } else if ((6 + 7) < 9) {
-    //   console.log('hello')
-    // } else {
-    //   console.log('greetings')
-    // }
-
-    // let x = 20
-    // x = x * 2
-    // x = 50 - x
-
-    // if (x > 0) {
-    //   console.log('Greater than 0')
-    // }
-    // if (x > 5) {
-    //   console.log('Greater than 5')
-    // }
-    // if (x < 20) {
-    //   console.log('Less than 20')
-    // }
-
-    // let x = 5
-
-    // switch (x) {
-    //   case 1:
-    //     console.log('x is 1')
-    //     break
-    //   case 2:
-    //     console.log('x is 2')
-    //     break
-    //   case 3:
-    //     console.log('x is 3')
-    //     break
-    //   case 4:
-    //     console.log('x is 4')
-    //     break
-    //   case 5:
-    //     console.log('x is 5')
-    //     break
-    // }
-
-    // let x = 5
-
-    // console.log(x > 2 ? 'Greater than 2' : 'Less than 2')
-
-    // let x = 4
-
-    // if (x > 5 && x % 2 === 0) {
-    //   console.log('yes')
-    // } else {
-    //   console.log('no')
-    // }
-    // let x = 4
-
-    // if (x > 5 || x % 2 === 0) {
-    //   console.log('yes')
-    // } else {
-    //   console.log('no')
-    // }
-
-    // console.log(Math.floor(Math.random() * 10))
-
-    // console.log(Math.round(4.5))
-    // console.log(Math.floor(4.5))
-    // console.log(Math.ceil(4.5))
+    alert(`
+      Results:
+      Wins: ${wins}
+      Losses: ${losses}
+      Ties: ${ties}
+    `)
 
   </script>
 </body>
